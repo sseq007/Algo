@@ -26,11 +26,11 @@ public class 카드놓기 {
             card[i] = Integer.parseInt(br.readLine());
         }
         map = new HashMap<>();
-        recur(0);
+        comb(0);
         System.out.println(map.size());
     }
 
-    private static void recur(int idx) {
+    private static void comb(int idx) {
         if (idx == k) {
             String str = "";
             for (int i = 0; i < sel.length; i++) {
@@ -47,7 +47,7 @@ public class 카드놓기 {
             if (!v[i]) {
                 v[i]=true;
                 sel[idx]=card[i];
-                recur(idx+1);
+                comb(idx+1);
                 v[i]=false;
             }
         }
