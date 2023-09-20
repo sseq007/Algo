@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 public class 과자나눠주기 {
@@ -15,6 +17,8 @@ public class 과자나눠주기 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         m = Integer.parseInt(st.nextToken());
         n = Integer.parseInt(st.nextToken());
+        Map<String, String> map = new HashMap<>();
+
         arr = new int[n];
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
