@@ -11,23 +11,21 @@ public class 수들의합5 {
 
         int n = Integer.parseInt(br.readLine());
 
-        int start=1,end=1,sum=0,cnt=0;
+        int left=1,right=1,sum=1,cnt=1;
 
-        while (end <= n) {
-
-
-            if (sum + end <= n) {
-                sum+=end;
-                end++;
-            }
+        while (right != n) {
 
             if (sum == n) {
                 cnt++;
+                right++;
+                sum += right;
             } else if (sum > n) {
-                sum -= start;
-                start++;
+                sum -= left;
+                left++;
+            } else {
+                right++;
+                sum += right;
             }
-
         }
         System.out.println(cnt);
     }
