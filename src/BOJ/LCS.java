@@ -10,7 +10,7 @@ public class LCS {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input1 = br.readLine();
         String input2 = br.readLine();
-        int[][] dp = new int[input1.length() + 1][input2.length() + 1];
+        int[][] dp =  new int[input1.length() + 1][input2.length() + 1];
 
         for (int i = 1; i <=input1.length() ; i++) {
             for (int j = 1; j <= input2.length(); j++) {
