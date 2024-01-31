@@ -5,43 +5,60 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+
 public class 어두운건무서워 {
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int r = Integer.parseInt(st.nextToken());
-        int c = Integer.parseInt(st.nextToken());
-        int q = Integer.parseInt(st.nextToken());
-        int[][] map = new int[r + 1][c + 1];
+            public static void main (String[]args) throws Exception {
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                StringBuilder sb = new StringBuilder();
 
-        for (int i = 1; i <= r; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 1; j <=c; j++) {
-                if (j == 1 && i != 1) {
-                    map[i][j] = Integer.parseInt(st.nextToken()) + map[i - 1][c];
-                    continue;
+                int width, height, question, sum;
+                int r1, c1, r2, c2;
+
+                //(1,1) ~ (x,y)까지의 합 저장
+                int[][] picture;
+
+                StringTokenizer st = new StringTokenizer(br.readLine());
+
+                width = Integer.parseInt(st.nextToken());
+                height = Integer.parseInt(st.nextToken());
+                question = Integer.parseInt(st.nextToken());
+
+                picture = new int[width + 1][height + 1];
+
+                for (int x = 1; x <= width; x++) {
+
+                    st = new StringTokenizer(br.readLine());
+
+                    // picture[x]의 합 저장
+                    sum = 0;
+
+                    for (int y = 1; y <= height; y++) {
+
+                        sum += Integer.parseInt(st.nextToken());
+                        picture[x][y] = sum + picture[x - 1][y];
+                    }
                 }
-                map[i][j] = Integer.parseInt(st.nextToken())+map[i][j-1];
+
+                for (int x = 0; x < question; x++) {
+                    st = new StringTokenizer(br.readLine());
+
+                    r1 = Integer.parseInt(st.nextToken());
+                    c1 = Integer.parseInt(st.nextToken());
+                    r2 = Integer.parseInt(st.nextToken());
+                    c2 = Integer.parseInt(st.nextToken());
+
+                    sb.append((picture[r2][c2] - picture[r1 - 1][c2] - picture[r2][c1 - 1] + picture[r1 - 1][c1 - 1]) / ((r2 - r1 + 1) * (c2 - c1 + 1))).append("\n");
+
+                }
+
+                System.out.print(sb);
+
             }
         }
-        for (int i = 0; i < q; i++) {
-            st = new StringTokenizer(br.readLine());
-            int x1 = Integer.parseInt(st.nextToken());
-            int y1 = Integer.parseInt(st.nextToken());
-            int x2 = Integer.parseInt(st.nextToken());
-            int y2 = Integer.parseInt(st.nextToken());
-            int size = (y2 - y1 + 1) * (x2 - x1 + 1);
 
 
 
-        }
-        for (int i = 1; i <= r; i++) {
-            for (int j = 1; j <= c; j++) {
-                System.out.print(map[i][j]+" ");
-            }
-            System.out.println();
-        }
 
-    }
-}
+
+
