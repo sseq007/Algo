@@ -3,6 +3,7 @@ package BOJ;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class 동전1 {
@@ -24,6 +25,7 @@ public class 동전1 {
             for (int j = arr[i]; j <= k; j++)
                 dp[j] += dp[j - arr[i]];
         }
+        System.out.println(Arrays.toString(dp));
 
         System.out.println(dp[k]);
     }
