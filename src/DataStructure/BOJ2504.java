@@ -20,7 +20,7 @@ public class BOJ2504 {
             if (c == '(' || c == '[') {
                 if (close) {
                     while (!sum.isEmpty()) {
-                        answer += sum.pee();
+//                        answer += sum.pee();
                     }
 //                    result += sum.pop();
 
