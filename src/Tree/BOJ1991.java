@@ -24,7 +24,6 @@ public class BOJ1991 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         tree = new Node[n];
-
         for (int i = 0; i < n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             char parent = st.nextToken().charAt(0);
