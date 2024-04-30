@@ -23,7 +23,6 @@ public class BOJ1912 {
             dp[i] = Math.max(dp[i - 1] + arr[i], arr[i]);
             max = Math.max(max, dp[i]);
         }
-        System.out.println(max);
-//        System.out.println(Arrays.stream(dp).max().getAsInt());
+        System.out.println(Arrays.stream(dp,1,n+1).max().getAsInt());
     }
 }
