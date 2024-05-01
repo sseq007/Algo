@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class BOJ1991 {
-
     static class Node{
         char val;
         Node left;
