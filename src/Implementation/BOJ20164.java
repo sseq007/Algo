@@ -39,8 +39,6 @@ public class BOJ20164 {
                     String sum2 = sum.substring(i, j);
                     String sum3 = sum.substring(j, sum.length());
                     int newSum = Integer.parseInt(sum1) + Integer.parseInt(sum2) + Integer.parseInt(sum3);
-//                    System.out.printf("%s %s %s\n",sum1,sum2,sum3);
-//                    System.out.println(newSum);
                     dfs(Integer.toString(newSum), cnt+checkOdd(Integer.toString(newSum)));
                 }
             }
